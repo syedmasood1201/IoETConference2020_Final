@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>IoET Conference 2020</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;1,100;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
+
+    <!-- aos animations  -->
+    <link rel="stylesheet" type="text/css" href="assets/aos.css" />
+
+    <!-- scripts of font awesome -->
+    <script src="https://kit.fontawesome.com/551e46de4a.js" crossorigin="anonymous"></script>
+
+    <!-- animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<style>
+    header {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/wall1ssb.jpg);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+    /* .navbar ul li a.active,
+    .navbar ul li a:hover {
+        border-bottom: 3px solid #90CAF9;
+        /* color: white;
+        background: #90CAF9; } */
+    
+    */ #accordion {
+        color: grey;
+        /* font-family: 'Ubuntu', sans-serif; */
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+        color: rgb(104, 104, 104);
+        text-decoration: none;
+        border-bottom: 3px solid #90caf9;
+        background-color: none;
+    }
+    
+    .timer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+        margin-top: 325px;
+    }
+    
+    .timer h4 {
+        color: #fff;
+        font-size: 30px;
+    }
+    /* .collapsible {
+        background-color: #ffffff;
+        color: grey;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .active,
+    .collapsible:hover {
+        background-color: #90caf9;
+    }
+
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #ffffff;
+    } */
+    /* Timeline section body  */
+    
+    .timeline-section {
+        /* background: #E8CBC0;
+        background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
+        background: linear-gradient(to right, #E8CBC0, #636FA4); */
+        background: rgb(0, 75, 93);
+        background: linear-gradient(90deg, rgba(0, 75, 93, 1) 0%, rgba(9, 78, 121, 1) 35%, rgba(144, 202, 249, 1) 100%);
+        min-height: 100vh;
+        width: 100vw;
+    }
+    /* Timeline holder */
+    
+    ul.timeline {
+        list-style-type: none;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    /* Timeline vertical line */
+    
+    ul.timeline:before {
+        content: ' ';
+        background: #fff;
+        display: inline-block;
+        position: absolute;
+        left: 16px;
+        width: 4px;
+        height: 100%;
+        z-index: 400;
+        border-radius: 1rem;
+    }
+    
+    li.timeline-item {
+        margin: 20px 0;
+    }
+    /* Timeline item arrow */
+    
+    .timeline-arrow {
+        border-top: 0.5rem solid transparent;
+        border-right: 0.5rem solid #fff;
+        border-bottom: 0.5rem solid transparent;
+        display: block;
+        position: absolute;
+        left: 2rem;
+    }
+    /* Timeline item circle marker */
+    
+    li.timeline-item::before {
+        content: ' ';
+        background: #ddd;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        left: 11px;
+        width: 14px;
+        height: 14px;
+        z-index: 400;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .text-gray {
+        color: #999;
+    }
+</style>
+
+<body>
+    <!-- Navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container">
+                <a href="home.html" class="navbar-brand text-uppercase font-weight-bold">IoETConf</a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto" id="current">
+                        <li class="nav-item active">
+                            <a href="home.html" class="nav-link text-uppercase font-weight-bold">Home <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link text-uppercase font-weight-bold">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#events" class="nav-link text-uppercase font-weight-bold">Events</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#faq" class="nav-link text-uppercase font-weight-bold">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="speakers.html" class="nav-link text-uppercase font-weight-bold">Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="committee-page.html" class="nav-link text-uppercase font-weight-bold">Committee</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact-us.html" class="nav-link text-uppercase font-weight-bold">Contact Us</a>
+                        </li>
+                        <span>&nbsp &nbsp </span>
+                        <li class="nav-item">
+                            <a href="https://events2register.typeform.com/to/UUYhY4hI" target="_blank" class="btn btn-info" role="button">Register Now!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main">
+        <div class="title">
+            <center>
+                <h2>IoET Conference 2020</h2>
+            </center>
+            <br />
+            <center>
+                <h3><small>Virtual Summit | 25th July, 2020</small></h3>
+            </center>
+            <br>
+        </div>
+        <div class="timer">
+            <center>
+                <h4><small>
+                        <p id="demo"></p>
+                    </small></h4>
+            </center>
+        </div>
+    </div>
+
+
+    <!-- about the event section  -->
+
+    <div class="bg-light" id="about">
+        <div class="container py-5">
+            <div class="row h-100 align-items-center py-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4">About the Event</h1>
+                    <p class="lead text-muted mb-0">
+                        A promising IoET Conference that aims to gather research, projects, innovations and ideas incorporating Robotics, Environmental Sensing, Home automation etc. under one roof along with frequently accessible services of AI,data analytics, embedded systems
+                        and ML which have revolutionized the tech industry, reducing the complexities and increasing the technicalities. Being an Open Community Flagship event, it connects people across the globe and uplifts unique innovations, rendering
+                        an international forum to researchers, academicians, professionals and students for their best works in AI, ML and IoT.
+                    </p>
+                    <p class="lead text-muted">
+                        <a href="#" class="text-muted"> <u></u></a>
+                    </p>
+                </div>
+                <div class="col-lg-6 d-lg-block" data-aos="fade-left">
+                    <img src="img/about.png" alt="" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-5" id="events">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 mx-auto" data-aos="fade-right">
+                    <img src="img/register.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-4">IoET Conference 2020</h1>
+                    <br />
+                    <h2 class="font-weight-light">
+                        Are you planning on attending the Conference? <br /><br /> Attendees | <strong>130</strong>
+                    </h2>
+                    <p class="font-italic text-muted mb-4"></p>
+                    <br />
+                    <a href="https://events2register.typeform.com/to/UUYhY4hI" target="_blank" class="btn btn-info px-5 rounded-pill shadow-sm">Register here</a>
+                </div>
+            </div>
+            <br>
+            <div class="row align-items-center mb-5">
+                <br><br>
+                <!-- timeline section   -->
+                <div class="container timeline-section py-5">
+                    <div class="row text-center text-white mb-5">
+                        <div class="col-lg-8 mx-auto">
+                            <h1 class="display-4" id="events">Events</h1>
+                            <p class="lead mb-0"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7 mx-auto">
+                            <!-- Timeline -->
+                            <ul class="timeline">
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Keynote Speech</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>09:00 - 09:10</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Ajeet Singh Raina</p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Introducing Pico - An Object Detection & Analytics using Docker, IoT & Amazon Rekognition Service</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>09:10 - 09:40</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Ajeet Singh Raina</p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Building a secure IoT Deploy pipeline</h2>
+                                    <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>09:45 - 10:25</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. David Tischler & Mr. Anuj Deshpande
+                                    </p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">HANNA: HARDWARE AWARE NEURAL NETWORK ARCHITECTURES (USING FBNET)</h2><span class="small text-gray"><i
+                                            class="fa fa-clock-o mr-1"></i>10:30 – 11:10</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Sai Vineeth Kalluru Srinivas.</p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Make your own gadget : Embedded devices for Pentesting
+                                    </h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>11:15 –
+                                        11:55</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Tarun Singh</p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Decentralised IoT using Blockchain</h2>
+                                    <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>12:00 – 12:30</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Robin Biju Thomas & Mr. Jayraj Roshan
+                                    </p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Going Serverless</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>12:35 – 13:05</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Blessin George Varghese</p>
+                                </li>
+                                <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                    <div class="timeline-arrow"></div>
+                                    <h2 class="h5 mb-0" data-aos="fade-left">Computer Vision</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>13:10 – 13:40</span>
+                                    <p class="text-small mt-2 font-weight-light">Mr. Aditya Jyoti Paul</p>
+                                </li>
+                            </ul>
+                            <br>
+                            <center>
+                                <a href="speakers.html" class="btn btn-danger px-5 rounded-pill shadow-sm">MEET OUR
+                                    SPEAKERS</a>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <!-- <h2 class="font-weight-light">Keynote Speakers</h2>
+                    <br /> -->
+            <!-- <i class="fa fa-leaf fa-2x mb-3 text-primary"></i> -->
+            <!-- <p class="font-italic text-muted mb-4">
+                        Professional IoT panel from ARM and Docker Community to give wings to indispensable talents and researches.
+                    </p> -->
+            <!-- <a
+                     href="https://www.papercall.io/ioetconf"
+                    class="btn btn-light px-5 rounded-pill shadow-sm"
+                     >Register as a speaker</a
+                     > -->
+            <!-- <a href="#" class="btn btn-light px-5 rounded-pill shadow-sm"></a> -->
+            <!-- </div>
+                      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2" data-aos="fade-left">
+                          <img src="img/speaker.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                      </div>
+                     </div>
+                         <div class="row align-items-center">
+                       <div class="col-lg-5 px-5 mx-auto" data-aos="fade-right">
+                           <img src="img/student.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                       </div>
+                       <div class="col-lg-6"> -->
+            <!-- <h1 class="display-4">Events</h1> -->
+            <!-- <br />
+                    <h2 class="font-weight-light">Student Speakers</h2>
+                    <p class="font-italic text-muted mb-4">
+                        An experienced panel to select best entries to put to light unique ideas for professionals from various industries like ARM and Docker community to review.
+                    </p> -->
+            <!-- <a href="https://www.papercall.io/ioetconf" target="_blank" class="btn btn-info px-5 rounded-pill shadow-sm">Register as a speaker</a> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="row align-items-center mb-5">
+                      <div class="col-lg-6 order-2 order-lg-1"> -->
+            <!-- <i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i> -->
+            <!-- <h2 class="font-weight-light">Call for Innovation</h2>
+                    <br /> -->
+            <!-- <i class="fa fa-leaf fa-2x mb-3 text-primary"></i> -->
+            <!-- <p class="font-italic text-muted mb-4">
+                        Answer this call for innovation by bringing your projects live for a review by our guest speakers. Get a chance to connect with the entire IoT community with your amazing project ideas.
+                    </p> -->
+            <!-- <a href="https://www.papercall.io/cfps/3354/submissions/new" target="_blank" class="btn btn-info px-5 rounded-pill shadow-sm">Register your Innovations here</a> -->
+            <!-- <a href="#" class="btn btn-light px-5 rounded-pill shadow-sm"></a> -->
+            <!-- </div>
+                      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2" data-aos="fade-left">
+                    <img src="img/paper.png" alt="" class="img-fluid mb-4 mb-lg-0" />
+                      </div>-->
+
+
+            <!-- faq section  -->
+            <div class="banner-breadcum section" id="faq">
+                <div class="row" data-aos="flip-up" data-aos-duration="6000">
+                    <div class="breadcrumb-image" style="background-image: url(img/faq2.jpg);">
+                        <div class="container text-center">
+                            <h1>Frequently asked questions</h1>
+                            <div class="breadcrumbs_path">
+                                <a href="#"></a> FAQ's</div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <!-- question  -->
+                <div id="accordion">
+                    <div class="faq-ques">
+                        <div class="card card-light" data-aos="fade-right">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Q: Who can attend the conference?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    Anyone who registers can attend the event, there are no restrictions on age, school or college.
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card card-light" data-aos="fade-left">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Q: On which online platform will the event happen?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    Zoom and later published on Youtube for future reference.
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card card-light" data-aos="fade-right">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Q: Will I be getting a certificate of participation?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    All speakers and attendees will be getting an e-certificate
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card card-light" data-aos="fade-left">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Q: How will I present my project if I am selected?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    You will be guided by the organisers, after selection.
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card card-light" data-aos="fade-right">
+                            <div class="card-header" id="headingFive">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Q: Can we submit more than one project for proposal, if
+                                        yes can I present both of them or the best one will be
+                                        chosen?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="card-body">
+                                    Yes! Absolutely
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card card-light" data-aos="fade-right">
+                            <div class="card-header" id="headingSix">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Q: What is the time duration of the event?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                <div class="card-body">
+                                    From 9AM to 2PM
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <!-- question  -->
+                </div>
+            </div>
+
+            <!-- faq section  -->
+        </div>
+    </div>
+    <!-- new faq section  -->
+
+    <!-- ////////////footer///////////////////// -->
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <h6>Powered By:</h6>
+                    <a href="https://www.ioetplanet.com" target="_blank"> <img STYLE=" WIDTH:125; height: 100;" src="assets/logo/logoioet.png" src="assets/logo/logoioet.png" alt=""></a>
+
+                    <a href="https://www.collabnix.com" target="_blank"> <img STYLE=" WIDTH:195;" src="assets/logo/logocollabnix.png" alt=""></a>
+                    <a href="https://www.theprojectteam.in" target="_blank">
+                        <IMG STYLE="position:relative; top: inherit; WIDTH:170px; HEIGHT:150px" SRC="assets/logo/logotpt.png">
+                    </a>
+
+
+                </div>
+
+                <!-- <div class="col-6 col-md-3">
+
+              <div class="tptlogo"> <h6>Crafted By:</h6></a></div>
+              <IMG STYLE="position:absolute; top: inherit; WIDTH:170px; HEIGHT:170px" SRC="assets/logo/logotpt.png">
+              <a href="https://www.theprojectteam.in"> <img src="assets/logo/logotpt.png" alt="">
+          </div> -->
+
+
+                <div class="col-xs-6 col-md-2">
+
+                </div>
+
+
+                <div class="col-xs-12 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="home.html#about">About</a></li>
+                        <li><a href="home.html#events">Events</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#committee">Committee</a></li>
+                        <li><a href="home.html#faq">FAQ</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        Designed by
+                        <b><a href="https://www.theprojectteam.in" target="_blank"> The Project Team</a></b>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="dribbble" href="https://www.theprojectteam.in" target="_blank"><i
+                                    class="fa fa-globe"></i></a>
+                        </li>
+                        <li><a class="facebook" href="https://www.facebook.com/theprojectteamsrm" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a class="twitter" href="https://github.com/TheProjectTeamSRM" target="_blank"><i
+                                    class="fa fa-github"></i></a></li>
+                        <li><a class="linkedin" href="https://www.linkedin.com/company/theprojectteamsrm/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a class="linkedin" href="https://www.instagram.com/the_project_team/" target="_blank"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="https://www.youtube.com/channel/UCJL_Mms0MdJ2zaqzC2no8Lw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+
+
+                    </ul>
+                </div>
+    </footer>
+
+    <!-- back to top button  -->
+    <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button"><i
+            class="fas fa-chevron-up"></i></a>
+
+    <!-- scripts for back to top button  -->
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $("#back-to-top").fadeIn();
+                } else {
+                    $("#back-to-top").fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $("#back-to-top").click(function() {
+                $("body,html").animate({
+                        scrollTop: 0,
+                    },
+                    400
+                );
+                return false;
+            });
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="assets/aos.js"></script>
+
+    <script>
+        AOS.init({
+            Duration: 5000,
+        });
+    </script>
+
+    <!-- nav-active script  -->
+    <script src="assets/nav-active.js"></script>
+    <script src="assets/main.js"></script>
+
+    <!-- timer script  -->
+
+    <script>
+        var countDownDate = new Date("July 25, 2020 9:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("demo").innerHTML = days + " Days " + hours + " Hours " +
+                minutes + " Minutes " + seconds + " Seconds ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158392547-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-158392547-1");
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
